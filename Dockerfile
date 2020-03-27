@@ -7,7 +7,6 @@ LABEL name="lutim" \
       url="https://gitlab.forge.orange-labs.fr/vpwz0513/lutim-fork"
 
 RUN useradd -ms /bin/bash drawio
-USER drawio
 WORKDIR /home/drawio
 
 RUN apt update
@@ -22,6 +21,7 @@ RUN wget https://github.com/jgraph/drawio-desktop/releases/download/v12.6.5/draw
 RUN dpkg -i draw.io-amd64-12.6.5.deb
 RUN rm draw.io-amd64-12.6.5.deb
 
+USER drawio
 
 CMD [ "/bin/bash" ]
 
