@@ -2,7 +2,7 @@ services:
   - docker
 
 before_script:
-  - echo $dockerhub-token | docker login --username dylanderv 
+  - docker login --username dylanderv --password ${DOCKERHUB_TOKEN}
 
 script:
   - docker build -t dylanderv/drawio-cli .
