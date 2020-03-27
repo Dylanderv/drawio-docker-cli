@@ -2,4 +2,6 @@ services:
   - docker
 
 script:
+  - docker login --username dylanderv --password $dockerhub-token 
   - docker build -t dylanderv/drawio-cli .
+  - docker push dylanderv/drawio-cli
